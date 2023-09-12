@@ -1,0 +1,29 @@
+<h1>НА ПРОДЕ РАЗДАВАТЬ ФАЙЛЫ НЕ ЧЕРЕЗ ДЖАНГО!</h1>
+<h2>План задач</h2>
+
+<h3>1. Добавить в модель хранение изображений</h3>
+<h3>2. Получать изображения в клиенте</h3>
+<h3>3. Добавить авторизацию и регистрацию</h3>
+<h3>4. Структура журнала продаж</h3>
+<h3>5. Форма добавления новой продажи</h3>
+
+<button (click)="getList()">Загрузить список</button>
+
+<div *ngIf="records">
+  а вот и результат
+  <div *ngFor="let rec of records">
+    {{rec.created_at | date}} {{rec.image}}
+    <img [src]="rec.image" alt="">
+  </div>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="postImage()">
+
+  <input type="file" name="image" (change)="onChange($event)" />
+  <button type="submit">Upload Image File</button>
+
+</form>
+
+
+<hr>
+

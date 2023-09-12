@@ -1,0 +1,22 @@
+node_modules/
+.vscode/
+/client/.angular/
+
+.DS_Store
+.gitignore
+
+env/
+*.pyc
+
+__pycache__/
+media/
+.idea/
+/server/stenography/models/
+*.bak
+*.dat
+*.dir
+*.tar
+**/venv/*
+# *.pem
+
+*.log
