@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  django:
+    build:
+      context: ./mysite
+      dockerfile: Dockerfile
+    command: gunicorn mysite.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - ./mysite:/mysite
+#      - static_data:/mysite/static
+    expose:
+      - 8000
+    environment:
+#      - DATABASE_URL=postgresql://django:django_QWERTY@db:5432/django
+      - DEBUG=1
+
+  nginx:
+    build: ./nginx
+    ports:
+      - 1337:80
+    depends_on:
+      - django
+
+#volumes:
+#  pg_data:
+#  static_data:

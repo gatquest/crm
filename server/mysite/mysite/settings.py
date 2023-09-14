@@ -9,10 +9,13 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+import os
 from datetime import timedelta
 from pathlib import Path
 import django
 from django.utils.translation import gettext
+# import environ
+# env = environ.Env()
 
 django.utils.translation.ugettext = gettext
 
@@ -29,7 +32,8 @@ SECRET_KEY = 'django-insecure-jrdf)!_b)$=mnoa*mu!fq_vpr&lm*in%r!@jmb=l1*)mg8he44
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['176.113.83.226',
+                 'localhost']
 
 
 # Application definition
@@ -98,6 +102,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+    # 'default': env.db()
 }
 
 # JWT_AUTH = {
@@ -157,7 +162,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/staticfiles/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
