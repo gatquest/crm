@@ -60,14 +60,14 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
-
-CSRF_TRUSTED_ORIGINS = ["http://localhost", "http://176.113.83.226", "https://localhost", "https://176.113.83.226"]
+CSRF_COOKIE_SECURE = False
+CSRF_TRUSTED_ORIGINS = ["http://*.localhost", "http://*.176.113.83.226", "https://*.localhost", "https://*.176.113.83.226"]
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-   # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
