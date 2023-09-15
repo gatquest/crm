@@ -5,7 +5,7 @@ WORKDIR /mysite
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
-COPY .. .
+COPY . .
 
 #RUN apk add --update --no-cache --virtual .tmp-build-deps \
 #        gcc libc-dev linux-headers postgresql-dev && \
