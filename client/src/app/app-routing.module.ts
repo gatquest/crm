@@ -5,7 +5,6 @@ import {AuthLayoutComponent} from "./component/auth-layout/auth-layout.component
 import {SiteLayoutComponent} from "./component/site-layout/site-layout.component";
 import {RegisterPageComponent} from "./component/register-page/register-page.component";
 import {AuthGuard} from "./classes/auth.guard";
-import {MainpageComponent} from "./mainpage/mainpage.component";
 import {OverviewComponent} from "./component/overview/overview.component";
 import {NewSaleComponent} from "./component/new-sale/new-sale.component";
 import {SalesComponent} from "./component/sales/sales.component";
