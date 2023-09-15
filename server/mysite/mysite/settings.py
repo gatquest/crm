@@ -61,7 +61,7 @@ REST_FRAMEWORK = {
     ),
 }
 CSRF_COOKIE_SECURE = False
-CSRF_TRUSTED_ORIGINS = ["http://*.localhost", "http://*.176.113.83.226", "https://*.localhost", "https://*.176.113.83.226"]
+CSRF_TRUSTED_ORIGINS = ["http://*.localhost", "http://*.176.113.83.226:1337", "https://*.localhost", "https://*.176.113.83.226:1337"]
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
