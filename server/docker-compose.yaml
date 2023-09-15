@@ -8,6 +8,8 @@ services:
     command: gunicorn mysite.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - ./mysite:/mysite
+      - /Volumes:/static
+      - /Users:/media
 #      - static_data:/mysite/static
     expose:
       - 8000
@@ -21,7 +23,8 @@ services:
       - 1337:80
     depends_on:
       - django
-
-#volumes:
+    volumes:
+      - /Volumes:/static
+      - /Users:/client/media
 #  pg_data:
 #  static_data:
