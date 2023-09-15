@@ -1,8 +1,8 @@
 FROM node:latest AS build
 LABEL maintainer="client-crm"
-WORKDIR /usr/src/app
+WORKDIR /client
 COPY package.json package-lock.json ./
-RUN #npm install -g @angular/cli@13.3.7
+#RUN npm install -g @angular/cli@13.3.7
 RUN npm install
 COPY . .
 RUN npm run build
